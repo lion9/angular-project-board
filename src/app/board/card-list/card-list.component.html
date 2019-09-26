@@ -1,5 +1,5 @@
 <app-card-item
-  *ngFor="let card of mockedCards | filter:searchText"
+  *ngFor="let card of backlogCards | filter:searchText"
   [card]="card"
   (remove) = "removeCard($event)">
 </app-card-item>
