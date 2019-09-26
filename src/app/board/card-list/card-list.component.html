@@ -1,0 +1,5 @@
+<app-card-item
+  *ngFor="let card of mockedCards | filter:searchText"
+  [card]="card"
+  (remove) = "removeCard($event)">
+</app-card-item>

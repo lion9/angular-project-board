@@ -1,1 +1,2 @@
-<app-card-list></app-card-list>
+<app-toolbar (search)="onSearch($event)"></app-toolbar>
+<app-card-list [searchText]="searchText"></app-card-list>

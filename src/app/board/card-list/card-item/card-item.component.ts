@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Card} from '../models/Card';
-import {User} from '../models/User';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Card} from '../../../models/Card';
+import {User} from '../../../models/User';
 
 @Component({
   selector: 'app-card-item',
@@ -13,6 +13,13 @@ export class CardItemComponent implements OnInit, Card {
   description: string;
   dueDate?: Date | string;
   assignee?: User;
+
+  @Input() public card: any;
+  @Output() public remove = new EventEmitter();
+
+  public onRemove() {
+    this.remove.emit(this.card);
+  }
 
   constructor() { }
 

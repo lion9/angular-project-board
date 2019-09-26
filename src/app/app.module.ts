@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { ToolbarComponent } from './board/toolbar/toolbar.component';
 import { BoardComponent } from './board/board.component';
-import { CardListComponent } from './card-list/card-list.component';
-import { CardItemComponent } from './card-item/card-item.component';
+import { CardListComponent } from './board/card-list/card-list.component';
+import { CardItemComponent } from './board/card-list/card-item/card-item.component';
 import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCardModule, MatInputModule, MatToolbarModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -17,10 +21,17 @@ import { FooterComponent } from './footer/footer.component';
     BoardComponent,
     CardListComponent,
     CardItemComponent,
-    FooterComponent
+    FooterComponent,
+    FilterPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

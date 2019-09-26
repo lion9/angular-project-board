@@ -1,0 +1,8 @@
+<mat-toolbar>
+  <form class="example-form" (submit)="onSearch()">
+    <mat-form-field class="search-field">
+      <input matInput [(ngModel)]="searchCriterion" placeholder="Enter search string" name="input">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Search</button>
+  </form>
+</mat-toolbar>
