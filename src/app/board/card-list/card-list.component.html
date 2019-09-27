@@ -1,5 +1,7 @@
-<app-card-item
-  *ngFor="let card of backlogCards | filter:searchText"
-  [card]="card"
-  (remove) = "removeCard($event)">
-</app-card-item>
+<mat-card>
+  <h2>{{ list.name }}</h2>
+  <app-card-item
+    [cards]="list.cards"
+    (click)="onRemove()">
+  </app-card-item>
+</mat-card>

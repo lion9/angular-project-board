@@ -1,23 +1,25 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Card} from '../../../models/Card';
-import {User} from '../../../models/User';
 
 @Component({
   selector: 'app-card-item',
   templateUrl: './card-item.component.html',
   styleUrls: ['./card-item.component.scss']
 })
-export class CardItemComponent implements Card {
-  id: string;
-  name: string;
-  description: string;
-  dueDate?: Date | string;
-  assignee?: User;
+export class CardItemComponent {
+  @Input() public cards: any[];
+  @Input() searchText: string;
+  @Input() taskLists: any;
+  @Output() public remove = new EventEmitter<any>();
 
-  @Input() public card: any;
-  @Output() public remove = new EventEmitter();
-
-  public onRemove() {
-    this.remove.emit(this.card);
+  public onRemove(item: any) {
+    console.log({
+      cards: this.cards,
+      item
+    });
+    this.remove.emit({
+      cards: this.cards,
+      item
+      }
+    );
   }
 }

@@ -1,8 +1,11 @@
-<mat-card>
-  <h2>{{card.name}}</h2>
+<div
+  *ngFor="let card of cards
+  | filter:searchText"
+>
+  <h4>{{card.name}}</h4>
   <p>{{card.description}}</p>
   <p>{{card.dueDate}}</p>
   <p>{{card.assignee.firstName}} {{card.assignee.lastName}}</p>
   <button mat-raised-button color="primary">Edit</button>
-  <button mat-raised-button color="warn" (click)="onRemove($event)">Delete</button>
-</mat-card>
+  <button mat-raised-button color="warn" (remove)="onRemove($event)">Delete</button>
+</div>

@@ -1,2 +1,4 @@
-<app-toolbar (search)="onSearch($event)"></app-toolbar>
-<app-card-list [searchText]="searchText"></app-card-list>
+<app-card-list
+  [searchText]="searchText"
+   *ngFor="let list of lists" [list]="list">
+</app-card-list>
